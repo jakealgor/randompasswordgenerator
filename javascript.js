@@ -1,3 +1,14 @@
+function copy(text) {
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    textarea.value = text;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert('Password has been Copied!')
+}
+
+
 function generatePassword(){
     var uppercase = document.getElementById('uppercase').checked;
     var lowercase = document.getElementById('lowercase').checked;
@@ -22,16 +33,7 @@ function generatePassword(){
         }
     }
 
-    function copy(text) {
-        var textarea = document.createElement("textarea");
-        document.body.appendChild(textarea);
-        textarea.value = text;
-        textarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
-        alert('Password has been Copied!')
-    }
-    
+
 
     document.getElementById("result").innerHTML = result
 
