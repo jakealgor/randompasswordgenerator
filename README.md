@@ -25,3 +25,8 @@
 
 * If you like the password that has been generated, hit "Copy to Clipboard"
 
+### Links
+
+Git: https://github.com/jakealgor/randompasswordgenerator
+
+Deployed: https://jakealgor.github.io/randompasswordgenerator/
