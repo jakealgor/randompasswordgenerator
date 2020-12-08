@@ -1,0 +1,44 @@
+.content{
+    border-radius: 25px;
+    margin-top:10px;
+    margin-bottom: 0 auto;
+    padding: 150px;
+    width: 100%;
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(157, 124, 248);
+}
+
+#slide{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.header {
+    font-weight: bold;
+    border-radius: 25px;
+    margin-left: 0;
+    padding: 50px;
+    margin-top: 10px;
+    margin-bottom: 0 auto;
+    text-align: center;
+    background-color: rgb(255, 137, 249);
+    width: 100%;
+}
+
+.generation {
+    text-align: center;
+}
+
+#show {
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    background-color: palegoldenrod;
+}
+
+#detail {
+    margin-top: 0;
+}

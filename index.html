@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary navbar-fixed-top">
+        <a class="navbar-brand" href="index.html">Password Generator</a>
+    </nav>
+    <div class="container">
+        <div class="row header">
+            <div class="col-lg-12">
+                <h1> Password Generator </h1>
+                <span type="text" id="result" placeholder="Your new password will be shown here!"></span>
+            </div>
+        </div>
+            <div class="col-lg-12">
+                <div class="content generation">
+                    <h5> Use the slider to set a length and hit Create for your new password!</h3>
+                    <input type="range" name="slide" id="length" min="8" max="50">
+                    <div id="characteramount"></div>
+                    <div class="setting">
+                        <label>Include uppercase letters</label> 
+                        <input type="checkbox" id="uppercase" checked />
+                    </div>
+                    <div class="setting">
+                        <label>Include lowercase letters</label> 
+                        <input type="checkbox" id="lowercase" checked />
+                    </div>
+                    <div class="setting">
+                        <label>Include numbers</label> 
+                        <input type="checkbox" id="number" checked />
+                    </div>
+                    <div class="setting">
+                        <label>Include symbols</label> 
+                        <input type="checkbox" id="symbol" checked />
+                    </div>
+                    <button class="btn btn-large" id="generate">Create</button>
+                    <button class="btn btn-large" id= "copy">Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="javascript.js"></script>
+</body>
+</html>
