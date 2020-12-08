@@ -75,33 +75,3 @@ function getSymbol(){
     const symbol = "!?$%^&().'/";
     return symbol [Math.floor(Math.random() * symbol.length)];
 } 
-
-
-
-// function passwordgenerator(){
-//     let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWZYZ1234567890!?$%^&().'/";
-//     let password = "";
-//     let generate = document.getElementById("slide").value;
-//     for(const i = 0; i <= generate; i++){
-//         password = password + characters.charAt(Math.floor(Math.random() * Math.floor(characters.length - 1)));
-//     }
-//     document.getElementById("show").value = password;
-//     document.getElementById("count").innerHTML += password + "<br />";
-// }
-
-// function copy(){
-//     document.getElementById("show").select();
-//     document.execCommand("Copy");
-//     alert("Password copied to your clipboard!");
-// }
-
-// document.getElementById("characteramount").innerHTML = "Character Count: 28";
-
-// document.getElementById("slide").oninput = function(){
-//     if(document.getElementById("slide").value > 8){
-//         document.getElementById("characteramount").innerHTML = "Character Count: " + document.getElementById("slide").value;
-//     }
-//     else{
-//         document.getElementById("characteramount").innerHTML = "Character Count: 8";
-//     }
-// }
