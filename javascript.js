@@ -1,59 +1,45 @@
-const resultEl = document.getElementById("result");
-const lengthEl = document.getElementById("length");
-const uppercaseEl = document.getElementById("uppercase");
-const lowercaseEl = document.getElementById("lowercase");
-const numberEl = document.getElementById("number");
-const symbolEl = document.getElementById("symbol");
-const generateEl = document.getElementById('generate');
-const copyEl = document.getElementById("copy");
+function generatePassword(){
+    var uppercase = document.getElementById('uppercase').checked;
+    var lowercase = document.getElementById('lowercase').checked;
+    var number = document.getElementById('number').checked;
+    var symbol = document.getElementById('symbol').checked;
 
-const gen = {
-    lower: getLowerCase,
-    upper: getUpperCase,
-    number: getNumber,
-    symbol: getSymbol,
-};
+    var result = "";
 
-generateEl.addEventListener('click', () => {
-    const length = +lengthEl.value;
-    const haslow = lowercaseEl.checked;
-    const hasupper = uppercaseEl.checked;
-    const hasnumber = numberEl.checked;
-    const hassym = symbolEl.checked;
-    resultEl.innerText = generatePassword(haslow, hasupper, hasnumber, hassym, length);
-});
-
-copyEl.addEventListener('click', () => {
-    const textarea = document.createElement('textarea');
-    const password = resultEl.innerText;
-    if(!password) {
-        return;
+    for(var i = 0;i < (getLength()/getChecked()); i++){
+        console.log("hit")
+        if (uppercase) {
+            result += getUpperCase()
+        }
+        if (lowercase) {
+            result += getLowerCase()
+        }
+        if (number) {
+            result += getNumber()
+        }
+        if (symbol) {
+            result += getSymbol()
+        }
     }
 
-    textarea.value = password;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    textarea.remove();
-    alert('Password has been Copied!')
-})
-
-function generatePassword(lower, upper, number, symbol, length){
-    let generatedPassword = '';
-    const typesCount = lower + upper + number + symbol;
-    const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0]);
-    if(typesCount === 0) {
-        return '';
+    function copy(text) {
+        var textarea = document.createElement("textarea");
+        document.body.appendChild(textarea);
+        textarea.value = text;
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        alert('Password has been Copied!')
     }
-    for(let i = 0; i < length; i += typesCount){
-        typesArr.forEach(type =>{
-            const funcName = Object.keys(type)[0];
-            generatedPassword += gen[funcName]();
-        })
-    }
+    
 
-    const finalPassword = generatedPassword.slice(0, length);
-    return finalPassword;
+    document.getElementById("result").innerHTML = result
+
+    console.log(getLength());
+
+    console.log("string length",result.length);
+
+    console.log("checked", getChecked())
 }
 
 function getLowerCase(){
@@ -75,3 +61,39 @@ function getSymbol(){
     const symbol = "!?$%^&().'/";
     return symbol [Math.floor(Math.random() * symbol.length)];
 } 
+
+
+function getLength(){
+    return document.getElementById("length").value
+}
+
+function getChecked(){
+    var uppercase = document.getElementById('uppercase').checked;
+    var lowercase = document.getElementById('lowercase').checked;
+    var number = document.getElementById('number').checked;
+    var symbol = document.getElementById('symbol').checked;
+
+    var checked = 0
+    if (uppercase) {
+        checked +=1 
+    }
+    if (lowercase) {
+        checked +=1 
+    }
+    if (number) {
+        checked +=1 
+    }
+    if (symbol) {
+        checked +=1
+    }
+    return checked
+}
+
+function getResult(){
+    if (document.getElementById('result').innerHTML == null){
+        return ""
+    }
+    else {
+        return document.getElementById('result').innerHTML
+    }
+}
